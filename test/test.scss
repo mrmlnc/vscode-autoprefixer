@@ -1,0 +1,7 @@
+@mixin flexboxMe() {
+  display: flex;
+}
+
+.box {
+  @include flexboxMe();
+}
