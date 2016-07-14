@@ -51,15 +51,15 @@ function init(document, onDidSaveStatus) {
           const end = new vscode.Position(document.lineCount - 1, lastLine.text.length);
           const range = new vscode.Range(start, end);
 
-          if (document.csscomb) {
-            delete document.csscomb;
+          if (document.autoprefixer) {
+            delete document.autoprefixer;
             return;
           }
 
           if (onDidSaveStatus) {
             const we = new vscode.WorkspaceEdit();
             we.replace(document.uri, range, result.css);
-            document.csscomb = true;
+            document.autoprefixer = true;
             vscode.workspace.applyEdit(we).then(() => {
               document.save();
             });
