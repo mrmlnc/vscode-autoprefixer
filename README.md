@@ -18,6 +18,10 @@ See the [extension installation guide](https://code.visualstudio.com/docs/editor
 
 Press `F1` and run the command named `Autoprefixer CSS`.
 
+> **About first run**
+>
+> When you first start the plugin is looking for an installed Autoprefixer. Therefore, the first run may take a long time. Subsequent runs are much faster.
+
 ## Supported languages
 
   * CSS
