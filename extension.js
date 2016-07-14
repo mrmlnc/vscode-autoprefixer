@@ -71,8 +71,12 @@ function init(document, onDidSaveStatus) {
         })
         .catch(console.error);
     })
-    .catch(() => {
-      vscode.window.showErrorMessage('Failed to load autoprefixer library. Please install autoprefixer in your workspace folder using **npm install autoprefixer** or globally using **npm install -g autoprefixer** and then press Retry.');
+    .catch((err) => {
+      if (err.code === 'ENOENT') {
+        return vscode.window.showErrorMessage('Failed to load autoprefixer library. Please install autoprefixer in your workspace folder using **npm install autoprefixer** or globally using **npm install -g autoprefixer** and then press Retry.');
+      }
+
+      console.error(err);
     });
 }
 
