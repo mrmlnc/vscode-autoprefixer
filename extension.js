@@ -26,14 +26,18 @@ function init(document, onDidSaveStatus) {
   const workspace = vscode.workspace.rootPath ? vscode.workspace.rootPath : '';
   resolve('autoprefixer', workspace, autoprefixer)
     .then((filepath) => {
-      autoprefixer = filepath;
+      if (!autoprefixer) {
+        autoprefixer = require(filepath);
+      }
+
+      const browsers = vscode.workspace.getConfiguration('autoprefixer').browsers;
 
       const content = document.getText();
       const lang = document.languageId || document._languageId;
       const syntax = getSyntax(lang);
       const parser = (lang === 'css') ? postcssSafeParser : syntax;
 
-      postcss([require(autoprefixer)])
+      postcss([autoprefixer(browsers)])
         .process(content, { parser })
         .then((result) => {
           result.warnings().forEach((x) => {
