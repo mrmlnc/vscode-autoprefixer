@@ -33,7 +33,7 @@ Press `F1` and run the command named `Autoprefixer CSS`.
 **autoprefixer.browsers**
 
   * Type: `Array`
-  * Default: `["last 2 versions"]`
+  * Default: `["last 2 versions", "> 5%"]`
   * Example: `["ie >= 10"]`
 
 Which browsers you need to support.

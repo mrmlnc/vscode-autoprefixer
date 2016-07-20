@@ -40,7 +40,7 @@
       "properties": {
         "autoprefixer.browsers": {
           "type": "array",
-          "default": ["last 2 versions"],
+          "default": ["last 2 versions", "> 5%"],
           "description": "Which browsers you need to support."
         },
         "autoprefixer.prefixOnSave": {
