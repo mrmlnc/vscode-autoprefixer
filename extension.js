@@ -4,7 +4,7 @@ const vscode = require('vscode');
 const postcss = require('postcss');
 const postcssSafeParser = require('postcss-safe-parser');
 
-const resolve = require('./lib/resolve');
+const resolve = require('npm-module-path');
 
 let autoprefixer = null;
 
@@ -24,7 +24,7 @@ function getSyntax(language) {
 
 function init(document, onDidSaveStatus) {
   const workspace = vscode.workspace.rootPath ? vscode.workspace.rootPath : '';
-  resolve(workspace, 'autoprefixer', autoprefixer)
+  resolve('autoprefixer', workspace, autoprefixer)
     .then((filepath) => {
       autoprefixer = filepath;
 
