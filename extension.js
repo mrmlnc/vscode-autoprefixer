@@ -73,7 +73,7 @@ function init(document, onDidSaveStatus) {
     })
     .catch((err) => {
       if (err.code === 'ENOENT') {
-        return vscode.window.showErrorMessage('Failed to load autoprefixer library. Please install autoprefixer in your workspace folder using **npm install autoprefixer** or globally using **npm install -g autoprefixer** and then press Retry.');
+        return vscode.window.showErrorMessage('Failed to load autoprefixer library. Please install autoprefixer in your workspace folder using **npm install autoprefixer** or globally using **npm install -g autoprefixer** and then run command again.');
       }
 
       console.error(err);
