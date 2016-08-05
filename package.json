@@ -30,17 +30,22 @@
   ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "autoprefixer.execute",
-      "title": "Autoprefix CSS"
-    }],
+    "commands": [
+      {
+        "command": "autoprefixer.execute",
+        "title": "Autoprefix CSS"
+      }
+    ],
     "configuration": {
       "type": "object",
       "title": "Autoprefixer configuration options",
       "properties": {
         "autoprefixer.browsers": {
           "type": "array",
-          "default": ["last 2 versions", "> 5%"],
+          "default": [
+            "last 2 versions",
+            "> 5%"
+          ],
           "description": "Which browsers you need to support."
         },
         "autoprefixer.prefixOnSave": {
@@ -56,9 +61,9 @@
     "xo": "^0.16.0"
   },
   "dependencies": {
-    "postcss": "5.1.0",
+    "postcss": "5.1.1",
     "postcss-safe-parser": "1.0.7",
-    "postcss-scss": "0.1.8",
+    "postcss-scss": "0.1.9",
     "postcss-less": "0.14.0",
     "npm-module-path": "1.0.0"
   },
@@ -67,15 +72,38 @@
   },
   "xo": {
     "rules": {
-      "indent": [2, 2, { "SwitchCase": 1 }],
+      "indent": [
+        2,
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ],
       "no-var": 2,
-      "prefer-const": [2, { "destructuring": "all" }],
-      "arrow-parens": [2, "always"],
+      "prefer-const": [
+        2,
+        {
+          "destructuring": "all"
+        }
+      ],
+      "arrow-parens": [
+        2,
+        "always"
+      ],
       "babel/arrow-parens": 0,
-      "object-curly-spacing": [2, "always"],
+      "object-curly-spacing": [
+        2,
+        "always"
+      ],
       "babel/object-curly-spacing": 0,
-      "space-before-function-paren": [2, "never"],
-      "generator-star-spacing": [2, "after"],
+      "space-before-function-paren": [
+        2,
+        "never"
+      ],
+      "generator-star-spacing": [
+        2,
+        "after"
+      ],
       "babel/generator-star-spacing": 0
     },
     "envs": [
