@@ -38,6 +38,11 @@
       "type": "object",
       "title": "Autoprefixer configuration options",
       "properties": {
+        "autoprefixer.findExternalAutoprefixer": {
+          "type": "boolean",
+          "default": false,
+          "description": "Use an external Autoprefixer package instead of built-in version."
+        },
         "autoprefixer.browsers": {
           "type": "array",
           "default": ["last 2 versions", "> 5%"],

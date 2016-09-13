@@ -97,6 +97,11 @@ function init(document, onDidSaveStatus) {
 }
 
 function activate(context) {
+  const findExternalPackage = vscode.workspace.getConfiguration('autoprefixer').findExternalAutoprefixer;
+  if (!findExternalPackage) {
+    autoprefixer = require('autoprefixer');
+  }
+
   const disposable = vscode.commands.registerTextEditorCommand('autoprefixer.execute', (textEditor) => {
     init(textEditor.document, false);
   });

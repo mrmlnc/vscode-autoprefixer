@@ -8,19 +8,14 @@
 
 Plugin installation is performed in several stages:
 
-  1. Install **autoprefixer** use `npm i -D autoprefixer` or `npm i -g autoprefixer`.
-  2. Press `F1` and select `Extensions: Install Extensions`.
-  3. Search and choose `vscode-autoprefixer`.
+  1. Press `F1` and select `Extensions: Install Extensions`.
+  2. Search and choose `vscode-autoprefixer`.
 
 See the [extension installation guide](https://code.visualstudio.com/docs/editor/extension-gallery) for details.
 
 ## Usage
 
 Press `F1` and run the command named `Autoprefixer CSS`.
-
-> **About first run**
->
-> When you first start the plugin is looking for an installed Autoprefixer. Therefore, the first run may take a long time. Subsequent runs are much faster.
 
 ## Supported languages
 
@@ -29,6 +24,17 @@ Press `F1` and run the command named `Autoprefixer CSS`.
   * SCSS
 
 ## Supported settings
+
+**autoprefixer.findExternalAutoprefixer**
+
+  * Type: `Boolean`
+  * Default: `false`
+
+Use an external Autoprefixer package instead of built-in version.
+
+> **About first run with this option**
+>
+> When you first start the plugin is looking for an installed Autoprefixer. Therefore, the first run may take a long time. Subsequent runs are much faster.
 
 **autoprefixer.browsers**
 
