@@ -2,19 +2,32 @@
 
 const vscode = require('vscode');
 const postcss = require('postcss');
-const postcssSafeParser = require('postcss-safe-parser');
+const safeParser = require('postcss-safe-parser');
+const lessParser = require('postcss-less');
+const lessStringifier = require('postcss-less/dist/less-stringify');
+const scssParser = require('postcss-scss');
 
 const resolve = require('npm-module-path');
 
 let autoprefixer = null;
 
-function getSyntax(language) {
+function getPostcssOptions(language) {
   switch (language) {
     case 'less': {
-      return require('postcss-less');
+      return {
+        parser: lessParser,
+        stringifier: lessStringifier
+      };
     }
     case 'scss': {
-      return require('postcss-scss');
+      return {
+        parser: scssParser
+      };
+    }
+    case 'css': {
+      return {
+        parser: safeParser
+      };
     }
     default: {
       return null;
@@ -33,12 +46,11 @@ function init(document, onDidSaveStatus) {
       const browsers = vscode.workspace.getConfiguration('autoprefixer').browsers;
 
       const content = document.getText();
-      const lang = document.languageId || document._languageId;
-      const syntax = getSyntax(lang);
-      const parser = (lang === 'css') ? postcssSafeParser : syntax;
+      const lang = document.languageId;
+      const options = getPostcssOptions(lang);
 
       postcss([autoprefixer(browsers)])
-        .process(content, { parser })
+        .process(content, options)
         .then((result) => {
           result.warnings().forEach((x) => {
             console.warn(x.toString());
