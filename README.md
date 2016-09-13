@@ -32,6 +32,11 @@ Press `F1` and run the command named `Autoprefixer CSS`.
 
 Use an external Autoprefixer package instead of built-in version.
 
+You must install Autoprefixer using:
+
+  * `npm i -D autoprefixer`
+  * `npm i -g autoprefixer`
+
 > **About first run with this option**
 >
 > When you first start the plugin is looking for an installed Autoprefixer. Therefore, the first run may take a long time. Subsequent runs are much faster.
