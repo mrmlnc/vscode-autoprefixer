@@ -1,7 +1,7 @@
 @mixin flexboxMe() {
-  display: flex;
+	display: flex;
 }
 
 .box {
-  @include flexboxMe();
+	@include flexboxMe();
 }

@@ -72,9 +72,7 @@
     "test": "xo"
   },
   "xo": {
-    "space": true,
     "rules": {
-      "indent": [2, 2, { "SwitchCase": 1 }],
       "no-var": 2,
       "prefer-const": [2, { "destructuring": "all" }],
       "space-before-function-paren": [2, "never"],
