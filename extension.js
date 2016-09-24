@@ -37,7 +37,7 @@ function getPostcssOptions(language) {
 
 function init(document, onDidSaveStatus) {
 	const workspace = vscode.workspace.rootPath ? vscode.workspace.rootPath : '';
-	resolve('autoprefixer', workspace, autoprefixer)
+	resolve('autoprefixer', workspace, { cache: autoprefixer })
 		.then((filepath) => {
 			if (!autoprefixer) {
 				autoprefixer = require(filepath);
@@ -88,10 +88,7 @@ function init(document, onDidSaveStatus) {
 				.catch(console.error);
 		})
 		.catch((err) => {
-			if (err.code === 'ENOENT') {
-				return vscode.window.showErrorMessage('Failed to load autoprefixer library. Please install autoprefixer in your workspace folder using **npm install autoprefixer** or globally using **npm install -g autoprefixer** and then run command again.');
-			}
-
+			vscode.window.showErrorMessage('Failed to load autoprefixer library. Please install autoprefixer in your workspace folder using **npm install autoprefixer** or globally using **npm install -g autoprefixer** and then run command again.');
 			console.error(err);
 		});
 }
