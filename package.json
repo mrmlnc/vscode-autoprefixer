@@ -62,7 +62,7 @@
   },
   "dependencies": {
     "autoprefixer": "6.4.1",
-    "postcss": "5.1.2",
+    "postcss": "5.2.4",
     "postcss-safe-parser": "2.0.0",
     "postcss-scss": "0.3.0",
     "postcss-less": "0.15.0",
