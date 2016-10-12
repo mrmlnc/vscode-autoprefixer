@@ -61,7 +61,7 @@
     "xo": "^0.16.0"
   },
   "dependencies": {
-    "autoprefixer": "6.4.1",
+    "autoprefixer": "6.5.1",
     "postcss": "5.1.2",
     "postcss-safe-parser": "2.0.0",
     "postcss-scss": "0.3.0",
