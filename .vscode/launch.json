@@ -1,4 +1,3 @@
-// A launch configuration that launches the extension inside a new window
 {
 	"version": "0.1.0",
 	"configurations": [
@@ -10,7 +9,9 @@
 			"args": [
 				"--extensionDevelopmentPath=${workspaceRoot}"
 			],
-			"stopOnEntry": false
+			"stopOnEntry": false,
+			"outDir": "${workspaceRoot}/out",
+			"preLaunchTask": "tsc"
 		}
 	]
 }

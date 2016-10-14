@@ -20,7 +20,7 @@ Press `F1` and run the command named `Autoprefixer CSS`.
 ## Supported languages
 
   * CSS
-  * Less (experimental support)
+  * Less
   * SCSS
 
 ## Supported settings
@@ -49,7 +49,7 @@ You must install Autoprefixer using:
 
 Which browsers you need to support.
 
-**autoprefixer.prefixOnSave**
+**autoprefixer.formatOnSave**
 
   * Type: `Boolean`
   * Default: `false`
