@@ -67,7 +67,7 @@
     "autoprefixer": "6.5.0",
     "postcss": "5.1.2",
     "postcss-safe-parser": "2.0.0",
-    "postcss-scss": "0.3.1",
+    "postcss-scss": "0.4.1",
     "postcss-less": "0.15.0",
     "npm-module-path": "2.0.0"
   }
