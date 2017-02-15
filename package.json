@@ -64,7 +64,7 @@
     "tslint": "^3.15.1"
   },
   "dependencies": {
-    "autoprefixer": "6.5.0",
+    "autoprefixer": "6.7.3",
     "postcss": "5.1.2",
     "postcss-safe-parser": "2.0.0",
     "postcss-scss": "0.3.1",
