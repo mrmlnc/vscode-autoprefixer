@@ -1,9 +1,12 @@
-.vscode/**
-typings/**
-test/**
-src/**
+out/**/*.d.ts
 .editorconfig
 .gitignore
-.travis.yml
+package-lock.json
+yarn.lock
 tsconfig.json
 tslint.json
+.travis.yml
+
+.vscode
+src/**
+test/**
