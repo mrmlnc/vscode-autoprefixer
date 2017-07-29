@@ -4,6 +4,14 @@
 
 ![VS Code plugin](https://cloud.githubusercontent.com/assets/7034281/16823311/da82a3c6-496b-11e6-8d95-0bebbf0b9607.gif)
 
+## Donate
+
+If you want to thank me, or promote your Issue.
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/mrmlnc)
+
+> Sorry, but I have work and support for plugins and modules requires some time after work. I will be glad of your support or PR's.
+
 ## Install
 
 Plugin installation is performed in several stages:
