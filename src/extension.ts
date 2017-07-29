@@ -17,10 +17,9 @@ interface IResult {
 	range: vscode.Range;
 }
 
-
 let output: vscode.OutputChannel;
 let autoprefixerConfiguration: IConfiguration;
-let autoprefixerModule = null;
+let autoprefixerModule: any = null;
 
 /**
  * Update Autoprefixer module.
@@ -78,7 +77,7 @@ function getPostcssOptions(language: string): any {
  * @returns {boolean}
  */
 function isSupportedSyntax(document: vscode.TextDocument): boolean {
-	return /(css|less|scss)/.test(document.languageId);
+	return /(css|postcss|less|scss)/.test(document.languageId);
 }
 
 /**
@@ -116,8 +115,8 @@ function showOutput(msg: string): void {
  */
 async function useAutoprefixer(document: vscode.TextDocument, selection: vscode.Selection): Promise<IResult> {
 	if (!isSupportedSyntax(document)) {
-		console.error('Cannot execute Autoprefixer because there is not style files. Supported: LESS, SCSS and CSS.');
-		return;
+		console.error('Cannot execute Autoprefixer because there is not style files. Supported: LESS, SCSS, PostCSS and CSS.');
+		return null;
 	}
 
 	await requireCore(autoprefixerConfiguration);
@@ -125,8 +124,8 @@ async function useAutoprefixer(document: vscode.TextDocument, selection: vscode.
 	const browsers = autoprefixerConfiguration.browsers;
 	const options = getPostcssOptions(document.languageId);
 
-	let range;
-	let text;
+	let range: vscode.Range;
+	let text: string;
 	if (!selection || (selection && selection.isEmpty)) {
 		const lastLine = document.lineAt(document.lineCount - 1);
 		const start = new vscode.Position(0, 0);
@@ -186,7 +185,7 @@ export function activate(context: vscode.ExtensionContext) {
 		const edit = useAutoprefixer(event.document, null).then((result) => {
 			// If we have warnings then don't update Editor
 			if (result.warnings) {
-				return;
+				return null;
 			}
 
 			return vscode.TextEdit.replace(result.range, result.css);

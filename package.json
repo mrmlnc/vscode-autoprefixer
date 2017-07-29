@@ -27,6 +27,7 @@
   "activationEvents": [
     "onCommand:autoprefixer.execute",
     "onLanguage:css",
+    "onLanguage:postcss",
     "onLanguage:less",
     "onLanguage:scss"
   ],
