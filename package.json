@@ -74,11 +74,12 @@
   },
   "dependencies": {
     "autoprefixer": "7.1.2",
+    "npm-module-path": "2.0.2",
     "postcss": "6.0.8",
+    "postcss-less": "1.1.0",
     "postcss-safe-parser": "3.0.1",
     "postcss-scss": "1.0.2",
-    "postcss-less": "1.1.0",
-    "npm-module-path": "2.0.2"
+    "tslib": "^1.7.1"
   },
   "scripts": {
     "postinstall": "node ./node_modules/vscode/bin/install",
