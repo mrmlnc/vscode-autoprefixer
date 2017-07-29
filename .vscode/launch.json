@@ -10,8 +10,9 @@
 				"--extensionDevelopmentPath=${workspaceRoot}"
 			],
 			"stopOnEntry": false,
-			"outDir": "${workspaceRoot}/out",
-			"preLaunchTask": "tsc"
+			"outFiles": [
+				"${workspaceRoot}/out"
+			]
 		}
 	]
 }
