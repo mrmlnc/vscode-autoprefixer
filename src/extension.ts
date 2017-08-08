@@ -59,7 +59,7 @@ function getPostcssOptions(language: string): any {
 			};
 		case 'scss':
 			return {
-				parser: require('postcss-scss')
+				syntax: require('postcss-scss')
 			};
 		case 'css':
 			return {
