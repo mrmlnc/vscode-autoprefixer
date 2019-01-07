@@ -57,6 +57,13 @@ You must install Autoprefixer using:
 
 Which browsers you need to support.
 
+**autoprefixer.grid**
+
+  * Type: `Boolean`
+  * Default: `false`
+
+[Grid Autoplacement](https://github.com/postcss/autoprefixer#does-autoprefixer-polyfill-grid-layout-for-ie) support in IE.
+
 **autoprefixer.formatOnSave**
 
   * Type: `Boolean`

@@ -56,6 +56,16 @@
           ],
           "description": "Which browsers you need to support."
         },
+        "autoprefixer.grid": {
+          "type": "string",
+          "enum": [
+            "autoplace",
+            "no-autoplace",
+            "off"
+          ],
+          "default": "off",
+          "description": "The ability to turn on Grid Autoplacement support in IE."
+        },
         "autoprefixer.formatOnSave": {
           "type": "boolean",
           "default": false,

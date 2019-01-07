@@ -8,6 +8,7 @@ import * as resolver from 'npm-module-path';
 interface IConfiguration {
 	findExternalAutoprefixer: boolean;
 	browsers: string[];
+	grid: 'off' | 'autoplace' | 'no-autoplace';
 	formatOnSave: boolean;
 }
 
@@ -120,8 +121,11 @@ async function useAutoprefixer(document: vscode.TextDocument, selection: vscode.
 
 	await requireCore(autoprefixerConfiguration);
 
-	const browsers = autoprefixerConfiguration.browsers;
-	const options = getPostcssOptions(document.languageId);
+	const processOptions = getPostcssOptions(document.languageId);
+	const autoprefixerOptions = {
+		browsers: autoprefixerConfiguration.browsers,
+		grid: autoprefixerConfiguration.grid === 'off' ? false : autoprefixerConfiguration.grid
+	};
 
 	let range: vscode.Range;
 	let text: string;
@@ -137,8 +141,8 @@ async function useAutoprefixer(document: vscode.TextDocument, selection: vscode.
 		text = document.getText(range);
 	}
 
-	return postcss([autoprefixerModule(browsers)])
-		.process(text, options)
+	return postcss([autoprefixerModule(autoprefixerOptions)])
+		.process(text, processOptions)
 		.then((result) => {
 			let warnings = '';
 			result.warnings().forEach((warn) => {
