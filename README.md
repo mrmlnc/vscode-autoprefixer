@@ -71,6 +71,14 @@ Which browsers you need to support.
 
 Add vendor prefixes to CSS when you save a file.
 
+### autoprefixer.ignoreFilesOnSave
+
+  * Type: `Array`
+  * Default: `[]`
+  * Example: `["variables.less", "mixins/**/*"]`
+
+An optional array of glob-patterns to ignore files on save.
+
 ## Keyboard shortcuts
 
 For changes keyboard shortcuts, create a new rule in `File -> Preferences -> Keyboard Shortcuts`:

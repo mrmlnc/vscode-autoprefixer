@@ -1,15 +1,18 @@
 'use strict';
 
-import * as vscode from 'vscode';
+import * as path from 'path';
 
+import * as vscode from 'vscode';
 import * as postcss from 'postcss';
 import * as resolver from 'npm-module-path';
+import * as micromatch from 'micromatch';
 
 interface IConfiguration {
 	findExternalAutoprefixer: boolean;
 	browsers: string[];
 	grid: 'off' | 'autoplace' | 'no-autoplace';
 	formatOnSave: boolean;
+	ignoreFilesOnSave: string[];
 }
 
 interface IResult {
@@ -189,6 +192,13 @@ export function activate(context: vscode.ExtensionContext) {
 			// If we have warnings then don't update Editor
 			if (result.warnings) {
 				return null;
+			}
+
+			if (autoprefixerConfiguration.ignoreFilesOnSave.length !== 0) {
+				const currentFile = path.relative(vscode.workspace.rootPath, event.document.fileName);
+				if (micromatch([currentFile], autoprefixerConfiguration.ignoreFilesOnSave).length !== 0) {
+					return null;
+				}
 			}
 
 			return vscode.TextEdit.replace(result.range, result.css);

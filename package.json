@@ -70,11 +70,17 @@
           "type": "boolean",
           "default": false,
           "description": "Add vendor prefixes to CSS when you save a file."
+        },
+        "autoprefixer.ignoreFilesOnSave": {
+          "type": "array",
+          "default": [],
+          "description": "An optional array of glob-patterns to ignore files on save."
         }
       }
     }
   },
   "devDependencies": {
+    "@types/micromatch": "^3.1.0",
     "@types/node": "^10.12.18",
     "rimraf": "^2.6.3",
     "tslint": "^5.12.0",
@@ -84,6 +90,7 @@
   },
   "dependencies": {
     "autoprefixer": "^9.4.4",
+    "micromatch": "^3.1.10",
     "npm-module-path": "^2.0.2",
     "postcss": "^7.0.7",
     "postcss-less": "^3.1.0",
