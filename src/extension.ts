@@ -54,8 +54,7 @@ function getPostcssOptions(language: string): any {
 	switch (language) {
 		case 'less':
 			return {
-				parser: require('postcss-less'),
-				stringifier: require('postcss-less/dist/less-stringify')
+				syntax: require('postcss-less')
 			};
 		case 'scss':
 			return {
