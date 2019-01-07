@@ -2,7 +2,7 @@
   "name": "vscode-autoprefixer",
   "displayName": "Autoprefixer",
   "description": "Parse CSS and add vendor prefixes automatically.",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "publisher": "mrmlnc",
   "license": "MIT",
   "engines": {
