@@ -33,7 +33,7 @@ Press `F1` and run the command named `Autoprefixer CSS`.
 
 ## Supported settings
 
-**autoprefixer.findExternalAutoprefixer**
+### autoprefixer.findExternalAutoprefixer
 
   * Type: `Boolean`
   * Default: `false`
@@ -49,7 +49,7 @@ You must install Autoprefixer using:
 >
 > When you first start the plugin is looking for an installed Autoprefixer. Therefore, the first run may take a long time. Subsequent runs are much faster.
 
-**autoprefixer.browsers**
+### autoprefixer.browsers
 
   * Type: `Array`
   * Default: `["last 2 versions", "> 5%"]`
@@ -57,14 +57,14 @@ You must install Autoprefixer using:
 
 Which browsers you need to support.
 
-**autoprefixer.grid**
+### autoprefixer.grid
 
   * Type: `Boolean`
   * Default: `false`
 
 [Grid Autoplacement](https://github.com/postcss/autoprefixer#does-autoprefixer-polyfill-grid-layout-for-ie) support in IE.
 
-**autoprefixer.formatOnSave**
+### autoprefixer.formatOnSave
 
   * Type: `Boolean`
   * Default: `false`
