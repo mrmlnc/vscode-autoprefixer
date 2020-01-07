@@ -89,7 +89,7 @@ function isSupportedSyntax(document: vscode.TextDocument): boolean {
  * @param {postcss.ResultMessage} warn
  * @returns {string}
  */
-function transformWarningMessage(warn: postcss.ResultMessage): string {
+function transformWarningMessage(warn: postcss.Warning): string {
 	return warn.toString().replace(/autoprefixer:\s<.*?>:(.*)?:\s(.*)/, '[$1] $2');
 }
 
