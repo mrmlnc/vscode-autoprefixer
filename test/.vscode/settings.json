@@ -1,8 +1,10 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-	"autoprefixer.browsers": [
-		"last 4 versions",
-		"ie >= 9",
-		"> 5%"
-	]
+	"autoprefixer.options": {
+		"overrideBrowserslist": [
+			"last 4 versions",
+			"ie >= 9",
+			"> 5%"
+		]
+	}
 }

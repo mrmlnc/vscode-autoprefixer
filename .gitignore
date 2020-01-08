@@ -10,8 +10,10 @@ npm-debug.log*
 # Dependency directory
 node_modules/
 
-# Compiled and tempory files
+# Compiled and temporary files
+.eslintcache
 .tmp/
+.benchmark/
 out/
 
 # Other files
