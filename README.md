@@ -23,7 +23,7 @@ See the [extension installation guide](https://code.visualstudio.com/docs/editor
 
 ## Usage
 
-Press `F1` and run the command named `Autoprefixer: Tun`.
+Press `F1` and run the command named `Autoprefixer: Run`.
 
 ## Supported languages
 
