@@ -23,61 +23,53 @@ See the [extension installation guide](https://code.visualstudio.com/docs/editor
 
 ## Usage
 
-Press `F1` and run the command named `Autoprefixer CSS`.
+Press `F1` and run the command named `Autoprefixer: Tun`.
 
 ## Supported languages
 
-  * CSS
-  * Less
-  * SCSS
+* CSS
+* Less
+* SCSS
 
 ## Supported settings
 
 ### autoprefixer.findExternalAutoprefixer
 
-  * Type: `Boolean`
-  * Default: `false`
+* Type: `Boolean`
+* Default: `false`
 
 Use an external Autoprefixer package instead of built-in version.
 
 You must install Autoprefixer using:
 
-  * `npm i -D autoprefixer`
-  * `npm i -g autoprefixer`
+* `npm i -D autoprefixer`
+* `npm i -g autoprefixer`
 
 > **About first run with this option**
 >
 > When you first start the plugin is looking for an installed Autoprefixer. Therefore, the first run may take a long time. Subsequent runs are much faster.
 
-### autoprefixer.browsers
+### autoprefixer.options
 
-  * Type: `Array`
-  * Default: `["last 2 versions", "> 5%"]`
-  * Example: `["ie >= 10"]`
+* Type: `Object`
+* Default: `{}`
 
-Which browsers you need to support.
-
-### autoprefixer.grid
-
-  * Type: `Boolean`
-  * Default: `false`
-
-[Grid Autoplacement](https://github.com/postcss/autoprefixer#does-autoprefixer-polyfill-grid-layout-for-ie) support in IE.
+Any options supported by autoprefixer — [documentation](https://github.com/postcss/autoprefixer#options).
 
 ### autoprefixer.formatOnSave
 
-  * Type: `Boolean`
-  * Default: `false`
+* Type: `Boolean`
+* Default: `false`
 
 Add vendor prefixes to CSS when you save a file.
 
-### autoprefixer.ignoreFilesOnSave
+### autoprefixer.ignoreFiles
 
-  * Type: `Array`
-  * Default: `[]`
-  * Example: `["variables.less", "mixins/**/*"]`
+* Type: `Array`
+* Default: `[]`
+* Example: `["variables.less", "mixins/**/*"]`
 
-An optional array of glob-patterns to ignore files on save.
+An optional array of glob-patterns to ignore files.
 
 ## Keyboard shortcuts
 

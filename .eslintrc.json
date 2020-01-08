@@ -1,0 +1,14 @@
+{
+	"extends": "mrmlnc",
+	"rules": {
+		"import/no-unresolved": [
+			"error",
+			{
+				"caseSensitive": true,
+				"ignore": [
+					"vscode"
+				]
+			}
+		]
+	}
+}
