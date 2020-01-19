@@ -29,6 +29,8 @@ type TextBlock = {
 	changed: boolean;
 };
 
+const RESOLVE_PROGRESS_HACK_SLEEP_IN_MS = 10;
+
 const context: Context = {
 	autoprefixer: undefined,
 	channels: {
@@ -223,7 +225,15 @@ async function resolveAutoprefixerModuleWithProgress(root: string, settings: Plu
 	const autoprefixer = await window.withProgress({
 		title: '[vscode-autoprefixer] resolve module',
 		location: ProgressLocation.Window
-	}, () => resolveAutoprefixerModule(root, settings));
+	}, async () => {
+		/**
+		 * Hack to display the progress because the progress is not displayed
+		 * for synchronous operation of the import (`require` after TS compilation).
+		 */
+		await sleep(RESOLVE_PROGRESS_HACK_SLEEP_IN_MS);
+
+		return resolveAutoprefixerModule(root, settings);
+	});
 
 	return autoprefixer;
 }
@@ -236,22 +246,26 @@ async function resolveAutoprefixerModule(root: string, settings: PluginSettings)
 	let autoprefixer: AutoprefixerModule;
 
 	if (settings.findExternalAutoprefixer) {
+		try {
+			const modulePath = await resolver.resolveOne('autoprefixer', root);
+
+			autoprefixer = await import(modulePath);
+		} catch {
+			throw new Error([
+				'Failed to load autoprefixer library.',
+				'Please install autoprefixer in your workspace folder using **npm install autoprefixer**',
+				'or globally using **npm install -g autoprefixer** and then run command again.'
+			].join(' '));
+		}
+	} else {
 		autoprefixer = await import('autoprefixer');
-	}
-
-	try {
-		const modulePath = await resolver.resolveOne('autoprefixer', root);
-
-		autoprefixer = await import(modulePath);
-	} catch {
-		throw new Error([
-			'Failed to load autoprefixer library.',
-			'Please install autoprefixer in your workspace folder using **npm install autoprefixer**',
-			'or globally using **npm install -g autoprefixer** and then run command again.'
-		].join(' '));
 	}
 
 	context.autoprefixer = autoprefixer;
 
 	return autoprefixer;
+}
+
+function sleep(ms: number): Promise<void> {
+	return new Promise((resolve) => setTimeout(resolve, ms));
 }
