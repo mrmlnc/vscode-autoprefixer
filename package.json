@@ -69,23 +69,23 @@
     }
   },
   "devDependencies": {
-    "@types/autoprefixer": "^9.6.1",
-    "@types/micromatch": "^4.0.0",
+    "@types/autoprefixer": "^9.7.2",
+    "@types/micromatch": "^4.0.1",
     "@types/node": "^12.12.24",
     "@types/vscode": "^1.40.0",
     "eslint": "^6.8.0",
-    "eslint-config-mrmlnc": "^1.1.0",
-    "rimraf": "^3.0.0",
-    "typescript": "^3.7.4"
+    "eslint-config-mrmlnc": "^1.1.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
-    "autoprefixer": "^9.7.3",
-    "micromatch": "^4.0.2",
-    "npm-module-path": "^2.0.2",
-    "postcss": "^7.0.26",
-    "postcss-less": "^3.1.4",
-    "postcss-safe-parser": "^4.0.1",
-    "postcss-scss": "^2.0.0"
+    "autoprefixer": "9.7.6",
+    "micromatch": "4.0.2",
+    "npm-module-path": "2.0.2",
+    "postcss": "7.0.27",
+    "postcss-less": "3.1.4",
+    "postcss-safe-parser": "4.0.2",
+    "postcss-scss": "2.0.0"
   },
   "scripts": {
     "clean": "rimraf out",
