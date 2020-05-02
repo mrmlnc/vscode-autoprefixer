@@ -1,6 +1,8 @@
 const path = require('path');
 
-/** @type {import('webpack').WebpackOptions} */
+const TerserPlugin = require('terser-webpack-plugin');
+
+/** @type {import('webpack').Configuration} */
 const config = {
 	target: 'node',
 
@@ -9,6 +11,15 @@ const config = {
 		path: path.join(__dirname, 'out'),
 		filename: 'extension.js',
 		libraryTarget: 'commonjs'
+	},
+	optimization: {
+		minimizer: [
+			new TerserPlugin({
+				parallel: true,
+				sourceMap: false,
+				extractComments: false
+			})
+		]
 	},
 	externals: {
 		vscode: 'commonjs vscode'
