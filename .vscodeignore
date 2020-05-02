@@ -1,12 +1,13 @@
-out/**/*.d.ts
-.editorconfig
-.gitignore
-package-lock.json
-yarn.lock
-tsconfig.json
-tslint.json
-.travis.yml
+.github/
+.vscode/
+src/
+test/
+typings/
+node_modules/
 
-.vscode
-src/**
-test/**
+.editorconfig
+.eslint*
+.git*
+.npmrc
+tsconfig.json
+webpack*

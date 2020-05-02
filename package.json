@@ -76,7 +76,10 @@
     "eslint": "^6.8.0",
     "eslint-config-mrmlnc": "^1.1.1",
     "rimraf": "^3.0.2",
-    "typescript": "^3.8.3"
+    "ts-loader": "7.0.2",
+    "typescript": "^3.8.3",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.11"
   },
   "dependencies": {
     "autoprefixer": "9.7.6",
@@ -88,6 +91,8 @@
     "postcss-scss": "2.0.0"
   },
   "scripts": {
+    "vscode:prepublish": "npm run clean && npm run webpack:production",
+    "webpack:production": "webpack --mode production",
     "clean": "rimraf out",
     "lint": "eslint \"src/**/*.ts\" --cache",
     "compile": "tsc",
