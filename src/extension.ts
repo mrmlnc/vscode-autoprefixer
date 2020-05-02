@@ -89,7 +89,7 @@ export function activate(context: ExtensionContext): void {
 
 		const settings = workspace.getConfiguration(undefined, workspaceFolderUri).get('autoprefixer') as PluginSettings;
 
-		if (!settings.formatOnSave) {
+		if (!settings.formatOnSave || !isSupportedLanguage(document.languageId)) {
 			return null;
 		}
 
