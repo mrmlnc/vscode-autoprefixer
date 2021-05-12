@@ -86,7 +86,7 @@
     "autoprefixer": "9.7.6",
     "micromatch": "4.0.2",
     "npm-module-path": "2.0.2",
-    "postcss": "7.0.27",
+    "postcss": "8.2.10",
     "postcss-less": "3.1.4",
     "postcss-safe-parser": "4.0.2",
     "postcss-scss": "2.0.0"
